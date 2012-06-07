@@ -1,0 +1,30 @@
+
+form{
+    width: 230px;
+    height: auto;
+    border: 2px dashed #333;
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin: 0px auto;
+}
+h3{
+    width: auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+label {
+    width: 69px;
+    display: inline-block;
+    text-align: right;
+}
+.register-container {
+    width: 240px;
+    height: auto;
+    margin: 0px auto;
+}
+.error {
+    color: #B11;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+}

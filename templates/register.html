@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" type="text/css" href="/static/reg.css">
+    </head>
+    <body>
+        <div class="register-container">
+            <h3>Register an account senor!</h3>
+            <form method="POST" action="">
+                <p>
+                    <label for="username">Yo name:</label>
+                    <input type="text" name="username" value="{{ username }}">
+                </p>
+                <p class="error">{{ user_error }}</p>
+                <p>
+                    <label for="password">Pass:</label>
+                    <input type="password" name="password">
+                </p>
+                <p class="error">{{ pass_error }}</p>
+                <p>
+                    <label for="verify">Agen:</label>
+                    <input type="password" name="verify">
+                </p>
+                <p class="error">{{ ver_error }}</p>
+                <p>
+                    <label for="email">E-mayo*:</label>
+                    <input type="text" name="email" value="{{ email }}">
+                </p>
+                <p class="error">{{ ema_error }}</p>
+                <input type="submit" value="syn up nao!">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+.top-margined {
+    margin-top: 50px;
+}
+
+.top-margined-mini {
+    margin-top: 18px;
+}
+
+.content {
+    background-color: #D9EEEE;
+    border-right: dashed;
+    border-left: dashed;
+    border-radius: 20px;
+    min-height: 420px;
+    padding-top:20px;
+}
+
+.edit-zone {
+    width: 100%;
+    height: 420px;
+}
+
+.dolan {
+    height: 90px;
+    text-align:center;
+    background-image: url('../dolan.png');
+    background-repeat:no-repeat;
+    background-position:center; 
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Logify yoself</title>
+        <link rel="stylesheet" type="text/css" href="/static/reg.css">
+    </head>
+    <body>
+        <div class="register-container">
+            <h3>¿quién eres, senor?</h3>
+            <form method="POST" action="">
+                <p>
+                    <label for="username">Yo name:</label>
+                    <input type="text" name="username" value="{{ username }}">
+                </p>
+                <p class="error">{{ user_error }}</p>
+                <p>
+                    <label for="password">Pass:</label>
+                    <input type="password" name="password">
+                </p>
+                <p class="error">{{ pass_error }}</p>
+                <input type="submit" value="logify">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+#navbar{
+    height:30px;
+    border-bottom: dashed 1px;
+}
+.rightable {
+    float: right;
+    margin-left: 32px;
+}
+#text {
+    margin-top: 16px;
+    height: 400px;
+    width: 100%;
+}
