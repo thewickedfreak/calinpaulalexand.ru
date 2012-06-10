@@ -248,6 +248,11 @@ class Welcum(webapp2.RequestHandler):
         else:
             self.redirect('/signup')
 
+class Portfolio(WikiHandler):
+    """Renders my portfolio."""
+    def get(self):
+        self.render("portfolio.html")
+
 PAGE_RE = r'(/(?:[a-zA-Z0-9_-]+/?)*)'
 
 app = webapp2.WSGIApplication([('/', MainHandler),
@@ -259,6 +264,7 @@ app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/logged/?', Logged),
                                ('/logout/?', Logout),
                                ('/regsux/?', Welcum),
+                               ('/about/?', Portfolio),
                                ('/_edit' + PAGE_RE, EditWiki),
                                (PAGE_RE, WikiPage),
                               ],

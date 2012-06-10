@@ -7,12 +7,11 @@
 }
 
 .content {
-    background-color: #D9EEEE;
     border-right: dashed;
     border-left: dashed;
     border-radius: 20px;
-    min-height: 420px;
-    padding-top:20px;
+    min-height: 920px;
+    padding: 20px 20px;
 }
 
 .edit-zone {
@@ -26,4 +25,12 @@
     background-image: url('../dolan.png');
     background-repeat:no-repeat;
     background-position:center; 
+}
+
+.avatar {
+    width: 170px;
+}
+
+#inline-link  {
+    display: inline;
 }
