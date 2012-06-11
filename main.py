@@ -28,6 +28,7 @@ import webapp2
 import jinja2
 
 # shortcuts
+from google.appengine.api import users
 from google.appengine.ext import db
 from string import letters
 
@@ -36,21 +37,6 @@ from string import letters
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
                                autoescape = False) 
-
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.out.write('los fricos')
-
-class BlogHandler(webapp2.RequestHandler):
-    def write(self, *args, **kwargs):
-        self.response.out.write(*args, **kwargs)
-        
-    def render_str(self, template, **params):
-        t = jinja_env.get_template(template)
-        return t.render(**params)
-        
-    def render(self, template, **kwargs):
-        self.write(self.render_str(template, **kwargs)) 
 
 class WikiHandler(webapp2.RequestHandler):
     def write(self, *args, **kwargs):
@@ -62,6 +48,28 @@ class WikiHandler(webapp2.RequestHandler):
 
     def render(self, template, **kwargs):
         self.write(self.render_str(template, **kwargs))
+
+class MainHandler(WikiHandler):
+    def get(self):
+        user, name, login_url = users.get_current_user(), None, None
+        
+        if user:
+            name = user.nickname()
+        else:
+            login_url = users.create_login_url(self.request.uri)
+
+        self.render('sneak.html', name=name, url=login_url)
+
+class BlogHandler(webapp2.RequestHandler):
+    def write(self, *args, **kwargs):
+        self.response.out.write(*args, **kwargs)
+        
+    def render_str(self, template, **params):
+        t = jinja_env.get_template(template)
+        return t.render(**params)
+        
+    def render(self, template, **kwargs):
+        self.write(self.render_str(template, **kwargs)) 
 
 class Post(db.Model):
     subject = db.StringProperty(required = True)

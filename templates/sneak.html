@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="span8 offset2">
+            {% if name %}
+                <h2> Welcome to my spot on teh interwebz, {{ name }} ♥</h2>
+            {% else %}
+                <h2>Welcome to my place on teh interwebz, <strong>stranger</strong>.</h2>
+            {% endif %}
+            <hr>
+            <h6>You can leave me a message over here using this weird keyboard {% if url %} after you <a href="{{url}}">login</a> with your google account{% endif %}.</h6>
+            <h6>Also, every page that does not currently exist is a wiki. So you can create it yourself. You can use plain text or HTML markup. You can even style with CSS or inject some javascript. Do whatever you want just have fun.</h6>
+            <hr>
+            <h6>Finally you can access my online portfolio & contact information in the "about myself" page.</h6>
+        </div>
+    </div>
+    <div id="text-preview" class="row top-margined">
+        <div class="span8 offset2">
+            <div class="text-preview-container">
+                <h5 class="text-preview">PARIS</h5>
+            </div>
+        </div>
+    </div>
+    <div id="weird-keyboard" class="top-margined">
+        <!-- I will regret this when i will add dvorak and colmak keyboard layouts :( -->
+        <div class="span8 offset2">
+        <div class="row">
+            <div class="letter dah" id="letter-q">Q</div>
+            <div class="letter dit" id="letter-w">W</div>
+            <div class="letter dit" id="letter-e">E</div>
+            <div class="letter dit" id="letter-r">R</div>
+            <div class="letter dah" id="letter-t">T</div>
+            <div class="letter dah" id="letter-y">Y</div>
+            <div class="letter dit" id="letter-u">U</div>
+            <div class="letter dit" id="letter-i">I</div>
+            <div class="letter dah" id="letter-o">O</div>
+            <div class="letter dit" id="letter-p">P</div>
+        </div>
+        <div class="row">
+            <div class="letter dit" id="letter-a">A</div>
+            <div class="letter dit" id="letter-s">S</div>
+            <div class="letter dah" id="letter-d">D</div>
+            <div class="letter dit" id="letter-f">F</div>
+            <div class="letter dah" id="letter-g">G</div>
+            <div class="letter dit" id="letter-h">H</div>
+            <div class="letter dit" id="letter-j">J</div>
+            <div class="letter dah" id="letter-k">K</div>
+            <div class="letter dit" id="letter-l">L</div>
+            <div class="letter dah" id="letter-colon">:</div>
+        </div>
+        <div class="row">
+            <div class="letter dah" id="letter-z">Z</div>
+            <div class="letter dah" id="letter-x">X</div>
+            <div class="letter dah" id="letter-c">C</div>
+            <div class="letter dit" id="letter-v">V</div>
+            <div class="letter dah" id="letter-b">B</div>
+            <div class="letter dah" id="letter-n">N</div>
+            <div class="letter dah" id="letter-m">M</div>
+            <div class="letter dit" id="letter-comma">,</div>
+            <div class="letter dah" id="letter-dot">.</div>
+            <div class="letter dah" id="letter-dash">-</div>
+        </div>
+        </div>
+    </div>
+    <div id="ditdah-input" class="top-margined">
+        <div class="row">
+            <div class="span2 offset4">
+                <button type="button" class="btn btn-success btn-extra-large">←</button>
+            </div>
+            <div class="span2">
+                <button type="button" class="btn btn-danger btn-extra-large">→</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
